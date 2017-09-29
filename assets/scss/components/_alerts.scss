@@ -1,0 +1,45 @@
+.alert {
+	position: relative;
+	padding: $alert-pd;
+	@include radius($alert-radius);
+	background-color: $color2;
+	margin: 1rem 0;
+
+	.close {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		color: $white;
+		font-size: 2rem;
+		cursor: pointer;
+	}
+
+	&.is-fixed {
+		position: fixed;
+		z-index: 999;
+
+		&-tr {
+			top: 2rem;
+			right: 2rem;
+		}
+		&-tl {
+			top: 2rem;
+			left: 2rem;
+		}
+		&-bl {
+			bottom: 0;
+			left: 0;
+		}
+		&-br {
+			bottom: 0;
+			right: 0;
+		}
+	}
+
+	&.is-primary, &.is-success, &.is-warning, &.is-error { color: $white; }
+
+	&.is-primary { background-color: $color4; }
+	&.is-success { background-color: $success; }
+	&.is-warning { background-color: $warning; }
+	&.is-error { background-color: $error; }
+}

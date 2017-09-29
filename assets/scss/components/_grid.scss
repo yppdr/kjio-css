@@ -1,0 +1,55 @@
+.grid {
+
+	@include flexbox;
+	@include direction(column);
+
+	&.grid-exemple > div {
+		background-color: rgba($color2, .3);
+	}
+
+	> div {
+		width: 100%;
+		padding: 1rem;
+		margin-bottom: 1rem;
+
+		&:last-of-type {
+			margin-right: 0 !important;
+		}
+	}
+
+	&.is-mobile {
+		@include direction(row);
+		@include justify-content(space-between);
+
+		@for $i from 1 through $grid-columns {
+			> div.col-#{$i} {
+				$multiplier: $i / $grid-columns;
+				 width: calc(100% * #{$multiplier} - #{$grid-gutter} * (1 - #{$multiplier}));
+				//  margin-right: $grid-gutter;
+			}
+		}
+	}
+
+}
+
+
+@include breakpoint(tablet) {
+
+	.grid {
+		@include direction(row);
+		@include justify-content(space-between);
+
+		> div.col {
+			margin-right: $grid-gutter;
+		}
+
+		@for $i from 1 through $grid-columns {
+			> div.col-#{$i} {
+				$multiplier: $i / $grid-columns;
+				 width: calc(100% * #{$multiplier} - #{$grid-gutter} * (1 - #{$multiplier}));
+				 margin-right: $grid-gutter;
+			}
+		}
+	}
+
+}

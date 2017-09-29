@@ -1,0 +1,17 @@
+.container {
+	width: $container-width;
+	max-width: $container-fluid;
+	margin: 0 auto;
+
+	&.is-fluid { width: $container-fluid; }
+}
+
+section.section {
+	padding: 2.5rem 0 1.5rem 0;
+}
+
+@include breakpoint(tablet) {
+	section.section {
+		padding: 5rem 0 2.5rem 0;
+	}
+}

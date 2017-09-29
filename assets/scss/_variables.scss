@@ -1,0 +1,90 @@
+// Filename: Variables
+
+
+/* Breakpoints responsive
+-------------------------- */
+$tablet: 768px;
+$desktop: 1024px;
+
+/* Animations
+------------------ */
+$transition-duration: .3s;
+
+
+/* Containers vars
+------------------- */
+$container-width: 118rem;
+$container-fluid: calc(100% - 4rem);
+
+/* Fonts vars
+---------------- */
+$font-family: 'PT Sans', sans-serif;
+$font-size: 1.6rem; // 14px based on 10px
+$line-height: 1.2;
+$font-weight: 300;
+
+$h1-like: 4.5rem;
+$h2-like: 4rem;
+$h3-like: 3.5rem;
+$h4-like: 2.5rem;
+$h5-like: 2rem;
+$h6-like: 1.5rem;
+
+
+/* Colors vars
+-------------- */
+$color1: #0A122A;
+$color2: #C5D1EB;
+$color3: #FCFCFC;
+$color4: #2176FF;
+$color5: #EF6461;
+
+$white: #FFFFFF;
+$black: #1f1f1f;
+
+$success: #31e363;
+$warning: #ff944f;
+$error: #e43b3b;
+
+
+/* Navbar vars
+----------------- */
+$navbar-height: 7rem;
+$navbrand-mr: 2rem;
+$navbrand-pd: 0 4rem;
+$navitem-pd: 0 2rem;
+
+/* Modals vars
+----------------- */
+$modal-bg: rgba($color1, .95);
+$modal-radius: .3rem;
+
+$modal-full-size: 95%;
+$modal-medium-size: 50rem;
+$modal-small-size: 25rem;
+
+/* Buttons vars
+------------------- */
+$btn-radius: .3rem;
+$btn-pd: 1rem 2rem;
+$btn-mr: 1rem 0;
+
+/* Grid vars
+------------------ */
+$grid-columns: 12;
+$grid-gutter: 1rem;
+
+/* Margin & Padding vars
+-------------------------- */
+$pt-md-max: 10;
+
+/* Alerts vars
+----------------- */
+$alert-radius: .3rem;
+$alert-pd: 1.5rem 4.5rem 1.5rem 2rem;
+
+/* Forms vars
+------------------ */
+$input-bg: $white;
+$input-rd: .3rem;
+$input-pd: 1rem 2rem;

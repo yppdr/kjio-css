@@ -1,0 +1,87 @@
+.btn {
+	display: inline-block;
+	@include radius($btn-radius);
+	padding: $btn-pd;
+	margin: $btn-mr;
+	position: relative;
+
+	font-size: $font-size !important;
+	vertical-align: top;
+
+	background-color: $color2;
+	outline: none;
+	transition: all $transition-duration;
+
+	cursor: pointer;
+	overflow: hidden;
+
+	> [class^="icon-"], > [class*=" icon-"] {
+		margin-right: .5rem;
+	}
+
+	&[class^="is-labelled-"], &[class*="is-labelled-"] {
+		span.label {
+			@include flexbox;
+			@include align-items(center);
+			@include justify-content(center);
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 4rem;
+			background: rgba($color1, .1);
+
+			[class^="icon-"], [class*=" icon-"] {
+				color: $white;
+			}
+		}
+	}
+
+	&.is-labelled-right {
+		padding-right: 6rem;
+		span.label {
+			right: 0;
+		}
+	}
+	&.is-labelled-left {
+		padding-left: 6rem;
+		span.label {
+			left: 0;
+		}
+	}
+
+	&.is-outlined {
+		background-color: transparent;
+		border: .1rem solid $color2;
+
+		&.is-primary {
+			background-color: transparent;
+			border-color: $color4;
+			color: $color4;
+		}
+		&.is-success {
+			background-color: transparent;
+			border-color: $success;
+			color: $success;
+		}
+		&.is-warning {
+			background-color: transparent;
+			border-color: $warning;
+			color: $warning;
+		}
+		&.is-error {
+			background-color: transparent;
+			border-color: $error;
+			color: $error;
+		}
+	}
+
+	&.is-primary, &.is-success, &.is-error, &.is-warning {
+		color: white;
+	}
+
+	// Success, Warning, error
+	&.is-primary { background-color: $color4; }
+	&.is-success { background-color: $success; }
+	&.is-warning { background-color: $warning; }
+	&.is-error { background-color: $error; }
+}

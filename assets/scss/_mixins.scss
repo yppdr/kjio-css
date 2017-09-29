@@ -1,0 +1,87 @@
+/* MIXINS
+-------------------------- */
+
+// Flexbox
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin direction ($direction...) {
+    -webkit-flex-direction: ($direction);
+       -moz-flex-direction: ($direction);
+        -ms-flex-direction: ($direction);
+            flex-direction: ($direction);
+}
+@mixin justify-content ($flexjustify...) {
+    -webkit-justify-content: ($flexjustify);
+       -moz-justify-content: ($flexjustify);
+        -ms-justify-content: ($flexjustify);
+            justify-content: ($flexjustify);
+}
+@mixin align-items ($flex-align-items...) {
+     -webkit-align-items: ($flex-align-items);
+        -moz-align-items: ($flex-align-items);
+         -ms-align-items: ($flex-align-items);
+             align-items: ($flex-align-items);
+}
+@mixin flow ($flex-flow...) {
+    -webkit-flex-flow: ($flex-flow);
+       -moz-flex-flow: ($flex-flow);
+        -ms-flex-flow: ($flex-flow);
+            flex-flow: ($flex-flow);
+}
+
+@mixin shrink ($flex-shrink...) {
+    -webkit-flex-shrink: ($flex-shrink);
+       -moz-flex-shrink: ($flex-shrink);
+        -ms-flex-shrink: ($flex-shrink);
+            flex-shrink: ($flex-shrink);
+}
+
+@mixin grow ($flex-grow...) {
+    -webkit-flex-grow: ($flex-grow);
+       -moz-flex-grow: ($flex-grow);
+        -ms-flex-grow: ($flex-grow);
+            flex-grow: ($flex-grow);
+}
+@mixin basis ($flex-basis...) {
+    -webkit-flex-basis: ($flex-basis);
+       -moz-flex-basis: ($flex-basis);
+        -ms-flex-basis: ($flex-basis);
+            flex-basis: ($flex-basis);
+}
+@mixin wrap ($flex-wrap...) {
+    -webkit-flex-wrap: ($flex-wrap);
+       -moz-flex-wrap: ($flex-wrap);
+        -ms-flex-wrap: ($flex-wrap);
+            flex-wrap: ($flex-wrap);
+}
+@mixin align-self ($flex-align-self...) {
+    -webkit-align-self: ($flex-align-self);
+       -moz-align-self: ($flex-align-self);
+        -ms-align-self: ($flex-align-self);
+            align-self: ($flex-align-self);
+}
+
+
+// Radius
+@mixin radius($radius...) {
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+// Breakpoints
+@mixin breakpoint($point) {
+   @if $point == tablet {
+     @media (min-width: $tablet) { @content ; }
+  }
+   @else if $point == desktop {
+     @media (min-width: $desktop) { @content ; }
+  }
+}

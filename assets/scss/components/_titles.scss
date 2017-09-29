@@ -1,0 +1,46 @@
+/* TITLES
+-------------- */
+
+h1 { font-size: $h1-like; }
+h2 { font-size: $h2-like; }
+h3 { font-size: $h3-like; }
+h4 { font-size: $h4-like; }
+h5 { font-size: $h5-like; }
+h6 { font-size: $h6-like; }
+
+.title {
+	position: relative;
+	display: block;
+	margin-bottom: 2rem;
+
+	&.is-bordered::after {
+		content: '';
+		display: block;
+		width: 3rem;
+		height: .1rem;
+		margin-top: 1rem;
+		background-color: rgba($color1, .2);
+	}
+
+	&.is-anchor::before {
+		content: '\e909';
+		display: inline-block;
+		font-family: 'Feather';
+		color: $color2;
+		font-size: 1.2rem;
+		margin-right: .5rem;
+	}
+
+	&.is-h1 { font-size: $h1-like; }
+	&.is-h2 { font-size: $h2-like; }
+	&.is-h3 { font-size: $h3-like; }
+	&.is-h4 { font-size: $h4-like; }
+	&.is-h5 { font-size: $h5-like; }
+	&.is-h6 { font-size: $h6-like; }
+
+	small {
+		display: block;
+		font-size: $h6-like;
+		color: rgba($color1, .5);
+	}
+}

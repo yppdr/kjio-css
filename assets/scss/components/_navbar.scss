@@ -1,0 +1,210 @@
+/* NAVBAR
+-------------- */
+
+
+nav.nav {
+	@include flexbox;
+	@include direction(column);
+	position: relative;
+	z-index: 90;
+
+	&.is-fixed {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+	.nav-brand {
+		@include flexbox;
+		@include align-items(center);
+		position: relative;
+		padding: 1rem 2rem;
+		background-color: $color4;
+		color: $white;
+		z-index: 1;
+		font-size: 2.4rem;
+
+		> a {
+			@include flexbox;
+			@include align-items(center);
+		}
+
+		svg path {
+			fill: $white;
+		}
+
+		span {
+			display: block;
+			font-size: $h5-like;
+		}
+
+		button.toggleNav {
+			@include flexbox;
+			@include direction(column);
+			@include justify-content(center);
+			@include align-items(flex-end);
+			position: absolute;
+			right: 2rem;
+			top: 50%;
+			transform: translateY(-50%);
+
+			color: white;
+			cursor: pointer;
+
+			span { font-size: 2rem !important; }
+
+		}
+	}
+
+	// Navbar
+	.nav-navbar {
+		display: none;
+		box-shadow: 0 .5rem 2rem rgba($color1, .1);
+		z-index: 0;
+
+		&.active {
+			display: block;
+		}
+
+		.nav-item {
+
+			a {
+				@include flexbox;
+				@include align-items(center);
+				padding: 1rem 2rem;
+				height: 100%;
+				transition: all $transition-duration;
+
+				[class^="icon-"], [class*=" icon-"] {
+					margin-right: .5rem;
+				}
+			}
+
+			&.has-children {
+
+				.nav-item-children a {
+					padding-left: 3rem;
+				}
+
+			}
+		}
+	}
+
+
+	// Nav is on the right side
+	&.nav-is-right {
+		@include justify-content(space-between);
+		.nav-brand { margin-right: 0; }
+	}
+	&.is-dark {
+		background-color: $color1;
+		.nav-item > a {
+			color: rgba($color2, .6);
+			border-bottom: .1rem solid rgba($color2, .1);
+			&:hover, &.active { color: $color2; }
+		}
+		.nav-item.has-children .nav-item-children {
+			a {
+				color: rgba($color2, .6);
+				padding-left: 3rem;
+				font-size: $h5-like;
+				border-bottom: .1rem solid rgba($color2, .1);
+				&:hover { color: $color2; }
+			}
+		}
+	}
+	&.is-light {
+		background-color: lighten($color4, 40%);
+		a {
+			color: rgba($color4, .7);
+			&:hover, &.active {
+				color: $color4;
+			}
+		}
+	}
+
+}
+
+
+// Breakpoint desktop
+@include breakpoint(desktop) {
+
+	nav.nav {
+		@include direction(row);
+
+		.nav-brand {
+			margin-right: 2rem;
+			button.toggleNav { display: none; }
+		}
+
+		.nav-navbar {
+			@include flexbox;
+			box-shadow: none;
+
+			.nav-item {
+				height: 100%;
+				a { border-bottom: none; }
+
+				&.has-children {
+					position: relative;
+					&:after {
+						bottom: 0;
+						left: 50%;
+						border: solid transparent;
+						content: "";
+						height: 0;
+						width: 0;
+						display: none;
+						position: absolute;
+						pointer-events: none;
+						border-bottom-color: $color4;
+						border-width: 5px;
+						margin-left: -5px;
+					}
+					.nav-item-children {
+						display: none;
+						position: absolute;
+						min-width: 20rem;
+						left: 50%;
+						transform: translateX(-50%);
+
+						a {
+							background: $color4;
+							padding-left: 2rem;
+							color: rgba($white, .6);
+							&:hover { color: $white; }
+							&:last-of-type {
+								border-bottom-left-radius: .3rem;
+								border-bottom-right-radius: .3rem;
+							}
+						}
+					}
+
+					&:hover {
+						&::after, .nav-item-children {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+
+		&.is-dark {
+
+		}
+		&.is-light {
+			.nav-brand { border-bottom: none; }
+		}
+
+		&.nav-is-right {
+			.nav-navbar .nav-item:last-of-type .nav-item-children {
+				right: 0;
+				left: inherit !important;
+				transform: none !important;
+			}
+		}
+
+	}
+
+}

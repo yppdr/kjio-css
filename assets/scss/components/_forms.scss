@@ -1,0 +1,115 @@
+input[type="text"], input[type="password"], input[type="phone"], textarea {
+	display: block;
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	background-color: $input-bg;
+	@include radius($input-rd);
+	padding: $input-pd;
+	border: .1rem solid rgba($color1, .2);
+
+	&:focus {
+		border-color: $color4;
+	}
+}
+
+form {
+	[class*='col-'], [class^='col-'] {
+		padding: 0 !important;
+		@include flexbox;
+		@include align-items(center);
+	}
+
+	.field {
+		margin-bottom: 1rem;
+	}
+}
+
+textarea { min-height: 15rem; }
+
+input[type="radio"], input[type="checkbox"] {
+	width: auto;
+	display: none;
+	& + label { cursor: pointer; }
+	& + label::before {
+		display: inline-block;
+		vertical-align: bottom;
+		margin-right: .5rem;
+		font-family: 'Feather';
+		font-size: 2rem;
+		color: rgba($color1, .2);
+	}
+
+	&:checked + label::before {
+		color: $color4;
+	}
+}
+
+input[type="radio"] {
+	& + label::before {
+		content: '\e925';
+	}
+
+	&:checked + label::before {
+		content: '\e91d';
+	}
+}
+input[type="checkbox"] {
+	& + label::before {
+		content: '\e981';
+	}
+
+	&:checked + label::before {
+		content: '\e91e';
+	}
+}
+
+.form-select {
+	position: relative;
+	width: 100%;
+	border: .1rem solid rgba($color1, .2);
+	@include radius($input-rd);
+	select {
+		display: block;
+		width: 100%;
+		padding: $input-pd;
+		-webkit-appearance: none;
+	   -moz-appearance: none;
+	   appearance: none;
+	}
+	&::after {
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
+		content: '\e920';
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: 4rem;
+		background-color: $white;
+		font-family: 'Feather';
+
+		pointer-events: none;
+	}
+}
+
+.form-file {
+	display: inline-block;
+
+	label {
+		display: block;
+		border: .1rem solid rgba($color1, .2);
+		padding: $input-pd;
+		@include radius($input-rd);
+		cursor: pointer;
+		background-color: $input-bg;
+		transition: all $transition-duration;
+
+		&:hover {
+			border-color: $color4;
+		}
+	}
+
+	input { display: none; }
+}
