@@ -264,6 +264,96 @@
 					<section id="composants">
 						<div class="title is-h2 is-bordered">Composants
 						<small>Tous les composants de Kjio CSS</small></div>
+						<!-- Navbar -->
+						<section id="navbar" class="mt-4">
+							<div class="title is-h4 is-anchor is-bordered">Navbar</div>
+							<p>Il existe 2 types de <strong>navbar</strong>: <code class="highliter">.is-dark</code> & <code class="highliter">.is-light</code>.</p>
+							<nav class="nav is-light">
+								<div class="nav-brand">
+									Brand
+									<button class="toggleNav">
+										<span class="icon-menu"></span>
+									</button>
+								</div>
+								<div class="nav-navbar">
+									<div class="nav-item">
+										<a href="#">Item</a>
+									</div>
+									<div class="nav-item">
+										<a href="#">Item</a>
+									</div>
+									<div class="nav-item">
+										<a href="#">Item</a>
+									</div>
+								</div>
+							</nav>
+							<nav class="nav is-dark mt-2">
+								<div class="nav-brand">
+									Brand
+									<button class="toggleNav">
+										<span class="icon-menu"></span>
+									</button>
+								</div>
+								<div class="nav-navbar">
+									<div class="nav-item">
+										<a href="#">Item</a>
+									</div>
+									<div class="nav-item has-children">
+										<a href="#">Item avec enfants</a>
+										<div class="nav-item-children">
+											<a href="#">Enfant 1</a>
+											<a href="#">Enfant 2</a>
+										</div>
+									</div>
+									<div class="nav-item">
+										<a href="#">Item</a>
+									</div>
+								</div>
+							</nav>
+							<p class="mt-2">De plus, cette navbar peut avoir la navigation à droite en rajoutant la classe <code class="highliter">.nav-is-right</code> à la navbar. Et elle peut également être fixée en haut en utilisant la classe <code class="highliter">.is-fixed</code>.</p>
+							<nav class="nav is-light nav-is-right mt-3">
+								<div class="nav-brand">
+									Brand
+									<button class="toggleNav">
+										<span class="icon-menu"></span>
+									</button>
+								</div>
+								<div class="nav-navbar">
+									<div class="nav-item">
+										<a href="#">Item</a>
+									</div>
+									<div class="nav-item">
+										<a href="#">Item</a>
+									</div>
+									<div class="nav-item">
+										<a href="#">Item</a>
+									</div>
+								</div>
+							</nav>
+							<pre class="mt-2"><code data-language="html"><nav class="nav is-dark mt-2">
+ <div class="nav-brand">
+  Brand
+  <button class="toggleNav">
+   <span class="icon-menu"></span>
+  </button>
+ </div>
+ <div class="nav-navbar">
+  <div class="nav-item">
+   <a href="#">Item</a>
+  </div>
+  <div class="nav-item has-children">
+   <a href="#">Item avec enfants</a>
+   <div class="nav-item-children">
+    <a href="#">Enfant 1</a>
+    <a href="#">Enfant 2</a>
+   </div>
+  </div>
+  <div class="nav-item">
+   <a href="#">Item</a>
+  </div>
+ </div>
+</nav></code></pre>
+						</section>
 						<!-- Boutons -->
 						<section id="buttons" class="mt-4">
 							<div class="title is-h4 is-anchor is-bordered">Boutons</div>
@@ -397,6 +487,7 @@
 						<li><a href="#forms">Formulaires</a></li>
 						<hr>
 						<li class="title is-h5 is-bordered">Composants</li>
+						<li><a href="#navbar">Navbar</a></li>
 						<li><a href="#buttons">Boutons</a></li>
 						<li><a href="#modals">Modals</a></li>
 						<li><a href="#alerts">Alertes</a></li>

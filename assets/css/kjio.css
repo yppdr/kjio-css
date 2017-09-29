@@ -1732,13 +1732,13 @@ nav.nav {
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  position: relative;
-  z-index: 90; }
+  position: relative; }
   nav.nav.is-fixed {
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0; }
+    left: 0;
+    z-index: 90; }
   nav.nav .nav-brand {
     display: -webkit-box;
     display: -moz-box;
@@ -1817,6 +1817,9 @@ nav.nav {
       transition: all 0.3s; }
       nav.nav .nav-navbar .nav-item a [class^="icon-"], nav.nav .nav-navbar .nav-item a [class*=" icon-"] {
         margin-right: .5rem; }
+    nav.nav .nav-navbar .nav-item.has-children .nav-item-children {
+      position: relative;
+      z-index: 900; }
     nav.nav .nav-navbar .nav-item.has-children .nav-item-children a {
       padding-left: 3rem; }
   nav.nav.nav-is-right {
@@ -1836,7 +1839,6 @@ nav.nav {
     nav.nav.is-dark .nav-item.has-children .nav-item-children a {
       color: rgba(197, 209, 235, 0.6);
       padding-left: 3rem;
-      font-size: 2rem;
       border-bottom: 0.1rem solid rgba(197, 209, 235, 0.1); }
       nav.nav.is-dark .nav-item.has-children .nav-item-children a:hover {
         color: #C5D1EB; }

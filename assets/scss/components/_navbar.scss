@@ -6,13 +6,13 @@ nav.nav {
 	@include flexbox;
 	@include direction(column);
 	position: relative;
-	z-index: 90;
 
 	&.is-fixed {
 		width: 100%;
 		position: fixed;
 		top: 0;
 		left: 0;
+		z-index: 90;
 	}
 
 	.nav-brand {
@@ -83,6 +83,8 @@ nav.nav {
 
 			&.has-children {
 
+				.nav-item-children { position: relative; z-index: 900; }
+
 				.nav-item-children a {
 					padding-left: 3rem;
 				}
@@ -108,7 +110,6 @@ nav.nav {
 			a {
 				color: rgba($color2, .6);
 				padding-left: 3rem;
-				font-size: $h5-like;
 				border-bottom: .1rem solid rgba($color2, .1);
 				&:hover { color: $color2; }
 			}
