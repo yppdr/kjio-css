@@ -39,3 +39,12 @@ for( var i = 0 in closeModal ){
 		this.closest('.modal').classList.remove('active');
 	}
 }
+
+/* alerts
+------------- */
+var alert = document.querySelectorAll('.alert .close');
+for( var i = 0 in alert) {
+	alert[i].onclick = function() {
+		this.closest('.alert').remove();
+	}
+}
